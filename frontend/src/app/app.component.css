@@ -1,0 +1,15 @@
+.ctrl_panel{
+padding:1%;
+margin:.25%;
+}
+.success {
+  background-color: springgreen;
+}
+.caution{
+    background-color:yellow;
+}
+.controls{
+  margin-left: 2%;
+  margin-right: 2%;
+  text-align: center;
+}

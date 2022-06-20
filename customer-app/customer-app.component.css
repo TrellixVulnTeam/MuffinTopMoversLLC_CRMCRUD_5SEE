@@ -1,0 +1,12 @@
+
+.success {
+  background-color: springgreen;
+}
+.caution{
+    background-color:yellow;
+}
+.controls{
+  margin-left: .5%;
+  margin-right: .5%;
+  text-align: center;
+}

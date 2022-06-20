@@ -1,10 +1,24 @@
 <link href="app.component.css">
-<div class="container mt-5">
-  <h1>MuffinTop Movers LLC Customer Management System</h1>
+<div class="container">
+  <h1>MuffinTop Movers LLC Business Management System</h1><br>
+  <button type="button" class=" main-controls btn btn-dark" data-bs-toggle="collapse" data-bs-target=".customerComponent" >Customer Management
+  </button>
+  <button type="button" class="main-controls btn btn-dark" data-bs-toggle="collapse" data-bs-target=".employeeComponent" >Employee Management
+  </button>
+  <button type="button" class="main-controls btn btn-dark" data-bs-toggle="collapse" data-bs-target=".jobsComponent" >Jobs Management
+  </button>
+<div class="container mt-5 collapsing customerComponent">
+  <h4>Customer Management System</h4>
   <br>
-  <a routerLink="create" class="btn ctrl_panel btn-dark controls">Add Record</a>
-  <a routerLink="read" class="controls btn ctrl_panel btn-dark">Read Records</a>
+  <a routerLink="create-customer" data-bs-toggle="collapse" data-bs-target=".customerComponent"  class="btn btn-sm btn-dark controls">Add Record</a>
+  <a routerLink="read-customer" data-bs-toggle="collapse" data-bs-target=".customerComponent" class="controls btn btn-sm btn-dark">Read Records</a>
   <br>
-  <router-outlet></router-outlet>
 </div>
-
+<div class="container mt-5 collapsing employeeComponent">
+  <h4>Employee Management System</h4>
+  <br>
+  <a routerLink="create-employee" data-bs-toggle="collapse" data-bs-target=".employeeComponent" class="btn btn-sm btn-dark controls">Add Employee</a>
+  <a routerLink="read-employee" data-bs-toggle="collapse" data-bs-target=".employeeComponent" class="controls btn btn-sm btn-dark">View Employees</a>
+  <br>
+</div>
+<router-outlet></router-outlet>

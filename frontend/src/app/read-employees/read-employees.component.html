@@ -1,0 +1,43 @@
+<br />
+
+<div class="container">
+  <div *ngIf="errormsg" class="alert alert-danger collapse alert-dismissible fade show" role="alert">
+    <strong>{{errormsg}}</strong>
+    <button type="button" class="btn-close" data-bs-toggle="collapse" data-bs-target=".alert" aria-label="Close">
+    </button>
+  </div>
+  <div *ngIf="successmsg" class="alert alert-danger collapse alert-dismissible fade show" role="alert">
+    <strong>{{successmsg}}</strong>
+    <button type="button" class="btn-close" data-bs-toggle="collapse" data-bs-target=".alert" aria-label="Close">
+    </button>
+  </div>
+  <br>
+  <h3>Employee Table</h3>
+  <div class="container mt-5">
+      <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Employee ID</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+        <th scope="col">Role</th>
+        <th scope="col">Controls</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor ='let us of readData'>
+        <th scope="row">{{us.employee_id}}</th>
+        <td>{{us.full_name}}</td>
+        <td>{{us.phone_number}}</td>
+        <td>{{us.email}}</td>
+        <td>{{us.address}}</td>
+        <td>{{us.role}}</td>
+        <td class="control_group"><button [routerLink]="['/create-employee',us.employee_id]" class="btn btn-sm btn-primary controls">Edit</button><button (click)="deleteEmployee(us.employee_id)" class="btn btn-sm  btn-danger controls" data-bs-toggle="collapse" data-bs-target=".alert">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>

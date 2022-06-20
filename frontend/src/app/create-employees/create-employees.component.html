@@ -1,0 +1,45 @@
+<div class="container mt-5">
+    <div class="container">
+      <div class="container mt-5">
+        <div *ngIf="errormsg" class="alert alert-danger collapse alert-dismissible fade show" role="alert">
+          <strong>{{errormsg}}</strong>
+          <button type="button" class="btn-close" data-bs-toggle="collapse" data-bs-target=".alert" aria-label="Close">
+          </button>
+        </div>
+        <div *ngIf="successmsg" class="alert alert-success collapse alert-dismissible fade show" role="alert">
+          <strong>{{successmsg}}</strong>
+          <button type="button" class="btn-close" data-bs-toggle="collapse" data-bs-target=".alert" aria-label="Close">
+          </button>
+        </div>
+    <form [formGroup]="employeeForm">
+      <h2>Add New Employee</h2>
+      <div class="col-lg-4 mt-2">
+  
+        <input type="text" class="form-control" formControlName="full_name" placeholder="Full Name" />
+      </div>
+      <div class="col-lg-4 mt-2">
+        <input type="text" class="form-control" id="Phone_Number" formControlName="phone_number" placeholder="Phone Number" />
+      </div>
+      <div class="col-lg-4 mt-2">
+        <input type="text" class="form-control" id="address" formControlName="email" placeholder="Email Address" />
+      </div>
+      <div class="col-lg-4 mt-2">
+        <input type="text" class="form-control" id="address" formControlName="address" placeholder="Address" />
+      </div>
+      <div class="col-lg-4 mt-2">
+        <input type="text" class="form-control" id="address" formControlName="role" placeholder="Role" />
+      </div>
+      <br>
+      <div class="col-lg-4 mt-2">
+        <button (click)="employeeSubmit()" class="btn btn-primary btn-md"data-bs-toggle="collapse" *ngIf="!getparamid" data-bs-target=".alert">Add Employee</button>
+      </div>
+      <div class="col-lg-4 mt-2">
+        <button (click)="employeeUpdate()" class="btn btn-warning btn-md"data-bs-toggle="collapse" *ngIf="getparamid" data-bs-target=".alert">Update Employee</button>
+      </div>
+  
+    </form>
+  
+  
+  
+  </div>
+  

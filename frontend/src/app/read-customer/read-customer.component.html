@@ -1,0 +1,39 @@
+<br />
+
+<div class="container">
+  <div *ngIf="errormsg" class="alert alert-danger collapse alert-dismissible fade show" role="alert">
+    <strong>{{errormsg}}</strong>
+    <button type="button" class="btn-close" data-bs-toggle="collapse" data-bs-target=".alert" aria-label="Close">
+    </button>
+  </div>
+  <div *ngIf="successmsg" class="alert alert-danger collapse alert-dismissible fade show" role="alert">
+    <strong>{{successmsg}}</strong>
+    <button type="button" class="btn-close" data-bs-toggle="collapse" data-bs-target=".alert" aria-label="Close">
+    </button>
+  </div>
+  <br>
+  <h3>Customer Table</h3>
+  <div class="container mt-5">
+      <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Customer_ID</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Last Known Address</th>
+        <th scope="col">Controls</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor ='let us of readData'>
+        <th scope="row">{{us.customer_ID}}</th>
+        <td>{{us.Full_Name}}</td>
+        <td>{{us.Phone_Number}}</td>
+        <td>{{us.Last_Known_Address}}</td>
+        <td class="control_group"><button [routerLink]="['/create',us.customer_ID]" class="btn btn-sm btn-primary controls">Edit</button><button (click)="deleteCustomer(us.customer_ID)" class="btn btn-sm  btn-danger controls" data-bs-toggle="collapse" data-bs-target=".alert">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>

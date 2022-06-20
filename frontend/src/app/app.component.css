@@ -1,7 +1,3 @@
-.ctrl_panel{
-padding:1%;
-margin:.25%;
-}
 .success {
   background-color: springgreen;
 }
@@ -9,7 +5,17 @@ margin:.25%;
     background-color:yellow;
 }
 .controls{
-  margin-left: 2%;
-  margin-right: 2%;
-  text-align: center;
+  margin-left: .25%;
+  margin-right: .25%;
+}
+/* You can add global styles to this file, and also import other style files */
+.collapsing {
+  -webkit-transition-delay: -2s;
+  transition-delay: -2s;
+  visibility: hidden;
+}
+.main-controls{
+  margin-top:2%;
+  margin-left: .25%;
+  margin-right: .25%;
 }

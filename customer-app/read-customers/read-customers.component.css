@@ -1,0 +1,10 @@
+.controls{
+    margin-left: 2%;
+    margin-right: 2%;
+    text-align: center;
+}
+.collapsing {
+    -webkit-transition-delay: -2s;
+    transition-delay: -2s;
+    visibility: hidden;
+}

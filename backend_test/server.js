@@ -1,11 +1,11 @@
 const express = require("express");
-// const bodyParser = require("body-parser"); /* deprecated */
+const bodyParser = require("body-parser"); /* deprecated */
 const cors = require("cors");
 
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:3000"
+  origin: "http://localhost:4200"
 };
 
 app.use(cors(corsOptions));

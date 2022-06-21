@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import {CustomerApiService} from '../customer-api.service'
 import {ActivatedRoute} from '@angular/router'
+import { fromEventPattern } from 'rxjs';
 @Component({
   selector: 'app-create-customer',
   templateUrl: './create-customer.component.html',
@@ -18,17 +19,19 @@ export class CreateCustomerComponent implements OnInit {
     this.service.getSingleCustomer(this.getparamid).subscribe((res)=>{
       console.log('res==>',res);
       this.customerForm.patchValue({
-        'Full_Name':res.data.Full_Name,
-        'Phone_Number':res.data.Phone_Number,
-        'Last_Known_Address': res.data.Last_Known_Address
+        'full_name':res.data.full_name,
+        'phone_number':res.data.phone_number,
+        'address': res.data.address,
+        'email':res.data.email
       });
     });
   }
 
   customerForm = new FormGroup({
-    'Full_Name': new FormControl(''),
-    'Phone_Number': new FormControl(''),
-    'Last_Known_Address': new FormControl('')
+    'full_name': new FormControl(''),
+    'phone_number': new FormControl(''),
+    'email': new FormControl(''),
+    'address': new FormControl('')
   });
   //Add new Customer
   customerSubmit() {
@@ -39,7 +42,7 @@ export class CreateCustomerComponent implements OnInit {
         this.successmsg = 'Successfully Added New Customer.';
         this.customerForm.reset();
       },
-      
+
       (error: HttpErrorResponse)=>{
         this.errormsg = error;
         this.customerForm.reset();
@@ -53,7 +56,7 @@ export class CreateCustomerComponent implements OnInit {
     this.service.updateCustomer(this.customerForm.value,this.getparamid).subscribe((res)=>{
       this.successmsg = 'Successfully Updated Customer Information.';
     },
-      
+
     (error: HttpErrorResponse)=>{
       this.errormsg = error;
     });

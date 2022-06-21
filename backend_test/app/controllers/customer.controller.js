@@ -54,6 +54,29 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
+  Customer.findByPk(id)
+    .then(data => {
+      if (data) {
+        res.send(data);
+      } else {
+        res.status(404).send({
+          message: `Cannot find Customer with id=${id}.`
+        });
+      }
+    })
+    .catch(err => {
+      console.log(err);
+
+      res.status(500).send({
+        message: "Error retrieving Customer with id=" + id
+      });
+    });
+};
+
+// Find a single Customer with an id
+exports.findCustomerJobs = (req, res) => {
+  const id = req.params.id;
+
   Customer.findByPk(id,{include:'jobs'})
     .then(data => {
       if (data) {
@@ -65,6 +88,8 @@ exports.findOne = (req, res) => {
       }
     })
     .catch(err => {
+      console.log(err);
+
       res.status(500).send({
         message: "Error retrieving Customer with id=" + id
       });

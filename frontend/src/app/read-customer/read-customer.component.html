@@ -26,10 +26,10 @@
     </thead>
     <tbody>
       <tr *ngFor ='let us of readData'>
-        <th scope="row">{{us.customer_ID}}</th>
-        <td>{{us.Full_Name}}</td>
-        <td>{{us.Phone_Number}}</td>
-        <td>{{us.Last_Known_Address}}</td>
+        <th scope="row">{{us.id}}</th>
+        <td>{{us.full_name}}</td>
+        <td>{{us.phone_number}}</td>
+        <td>{{us.address}}</td>
         <td class="control_group"><button [routerLink]="['/create',us.customer_ID]" class="btn btn-sm btn-primary controls">Edit</button><button (click)="deleteCustomer(us.customer_ID)" class="btn btn-sm  btn-danger controls" data-bs-toggle="collapse" data-bs-target=".alert">Delete</button></td>
       </tr>
     </tbody>

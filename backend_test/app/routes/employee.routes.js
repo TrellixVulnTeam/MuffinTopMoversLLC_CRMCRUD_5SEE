@@ -13,6 +13,9 @@
   // Retrieve a single Tutorial with id
   router.get("/:id", employees.findOne);
 
+  // Retrieve a single Customer's Job with id
+  router.get("/job-assignments/:id", employees.findEmployeeJobAssignments);
+
   // Update a Tutorial with id
   router.put("/:id", employees.update);
 

@@ -27,7 +27,9 @@ db.jobs = require("./jobs.model.js")(sequelize, Sequelize);
 db.job_assignments = require("./job_assignment.model.js")(sequelize, Sequelize);
 
 // Create relationships between tables
-db.jobs.belongsTo(db.customers,{foreignKey:'customer_id', as:'jobs'});
+db.customers.hasMany(db.jobs, { foreignKey:'customer_id', as: "jobs" });
+db.jobs.belongsTo(db.customers,{foreignKey:'customer_id'});
+db.employees.hasMany(db.job_assignments, { foreignKey:'employee_id', as: "job_assignments" });
 db.job_assignments.belongsTo(db.employees,{foreignKey:'employee_id'});
 db.job_assignments.belongsTo(db.jobs,{foreignKey:'job_id'});
 

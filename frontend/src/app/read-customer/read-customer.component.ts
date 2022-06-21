@@ -22,16 +22,16 @@ export class ReadCustomerComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.dtTrigger.unsubscribe();
   }
-  deleteCustomer(customer_ID:any){
+  deleteCustomer(id:any){
     this.errormsg = null;
     this.successmsg = null;
-    console.log('deleteID==>',customer_ID)
-    this.service.deleteData(customer_ID).subscribe((res)=>{
-    this.successmsg = res.message;    
+    console.log('deleteID==>',id)
+    this.service.deleteData(id).subscribe((res)=>{
+    this.successmsg = res.message;
      setTimeout(() => {
       this.redirectTo('/read-customer');
     }, 850);   },
-    
+
     (error: HttpErrorResponse)=>{
       this.errormsg = error;
     });
@@ -41,11 +41,11 @@ redirectTo(uri:string){
   this.router.navigate([uri]));
 }
 getAllData(){
-  this.service.getAllData().subscribe((res) => { 
+  this.service.getAllData().subscribe((res) => {
     console.log(res, "res==>");
-    this.readData = res.data;
+    this.readData = res;
     this.dtTrigger.next(this.readData);
-    this.dtTrigger.unsubscribe();
+    console.log(this.readData)
 });
 }
 }

@@ -26,7 +26,7 @@ export class CustomerApiService {
 
   apiUrl = 'http://localhost:3000/customers';
 
-  
+
   getAllData(): Observable<any>
   {
     return this._http.get(`${this.apiUrl}`).pipe(
@@ -40,26 +40,26 @@ export class CustomerApiService {
       catchError(this.handleError)
     );
   }
-  deleteData(customer_ID:any): Observable<any>
+  deleteData(id:any): Observable<any>
   {
-    console.log('DeleteAPI==>',customer_ID)
-    return this._http.delete(`${this.apiUrl}/${customer_ID}`).pipe(
+    console.log('DeleteAPI==>',id)
+    return this._http.delete(`${this.apiUrl}/${id}`).pipe(
       catchError(this.handleError)
     );
   }
-  updateCustomer(data:any,customer_ID:any): Observable<any>
+  updateCustomer(data:any,id:any): Observable<any>
   {
-    let ids = customer_ID;
+    let ids = id;
     console.log(ids)
     console.log(data)
-    return this._http.put(`${this.apiUrl}/${customer_ID}`,data).pipe(
+    return this._http.put(`${this.apiUrl}/${id}`,data).pipe(
       catchError(this.handleError)
     );
   }
-  getSingleCustomer(customer_ID:any): Observable<any>
+  getSingleCustomer(id:any): Observable<any>
   {
-    let ids = customer_ID;
-    return this._http.get(`${this.apiUrl}/${customer_ID}`).pipe(
+    let ids = id;
+    return this._http.get(`${this.apiUrl}/${id}`).pipe(
       catchError(this.handleError)
     );
   }

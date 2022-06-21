@@ -70,6 +70,29 @@ exports.findOne = (req, res) => {
     });
 };
 
+// Find a single Employee Job Assignments with an id
+exports.findEmployeeJobAssignments = (req, res) => {
+  const id = req.params.id;
+
+  Employee.findByPk(id,{include:'job_assignments'})
+    .then(data => {
+      if (data) {
+        res.send(data);
+      } else {
+        res.status(404).send({
+          message: `Cannot find Employee with id=${id}.`
+        });
+      }
+    })
+    .catch(err => {
+      console.log(err);
+
+      res.status(500).send({
+        message: "Error retrieving Employee with id=" + id
+      });
+    });
+};
+
 // Update a Employee by the id in the request
 exports.update = (req, res) => {
   const id = req.params.id;

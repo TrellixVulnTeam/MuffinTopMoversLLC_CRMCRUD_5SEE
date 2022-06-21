@@ -7,6 +7,7 @@ module.exports = (sequelize, Sequelize) => {
     },
     customer_id: {
       type: Sequelize.INTEGER,
+      primaryKey:true
     },
     documents: {
       type: Sequelize.STRING

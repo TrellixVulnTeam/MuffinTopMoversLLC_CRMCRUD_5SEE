@@ -15,14 +15,15 @@ export class CreateCustomerComponent implements OnInit {
   getparamid:any;
   constructor(private service:CustomerApiService, private router:ActivatedRoute) { }
   ngOnInit(): void {
-    this.getparamid = this.router.snapshot.paramMap.get('customer_ID');
+    this.getparamid = this.router.snapshot.paramMap.get('id');
+    console.log(this.router.snapshot.paramMap.get('id'));
     this.service.getSingleCustomer(this.getparamid).subscribe((res)=>{
       console.log('res==>',res);
       this.customerForm.patchValue({
-        'full_name':res.data.full_name,
-        'phone_number':res.data.phone_number,
-        'address': res.data.address,
-        'email':res.data.email
+        'full_name':res.full_name,
+        'phone_number':res.phone_number,
+        'address': res.address,
+        'email':res.email
       });
     });
   }

@@ -7,10 +7,10 @@ import { ReadEmployeesComponent } from './read-employees/read-employees.componen
 
 const routes: Routes = [
   { path: 'create-customer', component: CreateCustomerComponent },
-  {path: 'create-customer/:customer_ID', component:CreateCustomerComponent},
+  {path: 'create-customer/:id', component:CreateCustomerComponent},
   { path: 'read-customer', component: ReadCustomerComponent },
   { path: 'create-employee', component: CreateEmployeesComponent},
-  {path: 'create-employee/:employee_id', component:CreateEmployeesComponent},
+  {path: 'create-employee/:id', component:CreateEmployeesComponent},
   { path: 'read-employee', component: ReadEmployeesComponent },
 
 ];

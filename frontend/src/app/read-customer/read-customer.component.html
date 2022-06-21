@@ -30,10 +30,11 @@
         <td>{{us.full_name}}</td>
         <td>{{us.phone_number}}</td>
         <td>{{us.address}}</td>
-        <td class="control_group"><button [routerLink]="['/create',us.customer_ID]" class="btn btn-sm btn-primary controls">Edit</button><button (click)="deleteCustomer(us.customer_ID)" class="btn btn-sm  btn-danger controls" data-bs-toggle="collapse" data-bs-target=".alert">Delete</button></td>
+        <td class="control_group"><button [routerLink]="['/create-customer',us.id]" class="btn btn-sm btn-primary controls">Edit</button><button (click)="deleteCustomer(us.id)" class="btn btn-sm  btn-danger controls" data-bs-toggle="collapse" data-bs-target=".alert">Delete</button></td>
       </tr>
     </tbody>
   </table>
+
 
 
 </div>

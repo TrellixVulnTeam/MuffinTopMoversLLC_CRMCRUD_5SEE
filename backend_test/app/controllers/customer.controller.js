@@ -141,7 +141,7 @@ exports.delete = (req, res) => {
     })
     .catch(err => {
       res.status(500).send({
-        message: "Could not delete Customer with id=" + id
+        message: "Could not delete Customer with id=" + id + ". Customer is associated with jobs table."
       });
     });
 };

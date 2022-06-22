@@ -20,6 +20,7 @@
         <th scope="col">Customer_ID</th>
         <th scope="col">Full Name</th>
         <th scope="col">Phone Number</th>
+        <th scope="col">Email</th>
         <th scope="col">Last Known Address</th>
         <th scope="col">Controls</th>
       </tr>
@@ -29,6 +30,8 @@
         <th scope="row">{{us.id}}</th>
         <td>{{us.full_name}}</td>
         <td>{{us.phone_number}}</td>
+        <td>{{us.email}}</td>
+
         <td>{{us.address}}</td>
         <td class="control_group"><button [routerLink]="['/create-customer',us.id]" class="btn btn-sm btn-primary controls">Edit</button><button (click)="deleteCustomer(us.id)" class="btn btn-sm  btn-danger controls" data-bs-toggle="collapse" data-bs-target=".alert">Delete</button></td>
       </tr>

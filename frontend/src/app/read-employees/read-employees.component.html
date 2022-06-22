@@ -28,13 +28,13 @@
     </thead>
     <tbody>
       <tr *ngFor ='let us of readData'>
-        <th scope="row">{{us.employee_id}}</th>
+        <th scope="row">{{us.id}}</th>
         <td>{{us.full_name}}</td>
         <td>{{us.phone_number}}</td>
         <td>{{us.email}}</td>
         <td>{{us.address}}</td>
         <td>{{us.role}}</td>
-        <td class="control_group"><button [routerLink]="['/create-employee',us.employee_id]" class="btn btn-sm btn-primary controls">Edit</button><button (click)="deleteEmployee(us.employee_id)" class="btn btn-sm  btn-danger controls" data-bs-toggle="collapse" data-bs-target=".alert">Delete</button></td>
+        <td class="control_group"><button [routerLink]="['/create-employee',us.id]" class="btn btn-sm btn-primary controls">Edit</button><button (click)="deleteEmployee(us.id)" class="btn btn-sm  btn-danger controls" data-bs-toggle="collapse" data-bs-target=".alert">Delete</button></td>
       </tr>
     </tbody>
   </table>

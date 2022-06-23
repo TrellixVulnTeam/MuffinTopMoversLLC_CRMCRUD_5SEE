@@ -1,7 +1,7 @@
 # MuffinTopMoversLLC_CRMCRUD
 
 A full stack project created for MuffinTop Movers LLC 
-Node backend, Angular frontend 
+<br>Node backend, Angular frontend 
 
-Developed by Logan Vasquez
+Developed by Logan Vasquez. <br>
 Dallas, Texas.
